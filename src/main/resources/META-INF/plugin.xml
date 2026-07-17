@@ -1,0 +1,21 @@
+<idea-plugin>
+    <id>com.example.docgenerator</id>
+    <name>LLM Doc Generator</name>
+    <vendor>Anastasia</vendor>
+
+    <!-- Required: without a module dependency the plugin descriptor is invalid
+         and the platform will not load or list the plugin. -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
+
+    <actions>
+        <action id="GenerateDoc"
+                class="com.example.GenerateDocAction"
+                text="Generate Documentation"
+                description="Generate JavaDoc/KDoc via LLM">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt D"/>
+        </action>
+    </actions>
+</idea-plugin>
